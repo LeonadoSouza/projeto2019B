@@ -47,7 +47,7 @@ public class CadBairros extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnIncluir = new javax.swing.JButton();
+        btnSalvar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbBairros = new javax.swing.JTable();
@@ -66,13 +66,13 @@ public class CadBairros extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnIncluir.setText("SALVAR");
-        btnIncluir.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvar.setText("SALVAR");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIncluirActionPerformed(evt);
+                btnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIncluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
+        getContentPane().add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
 
         btnExcluir.setText("EXCLUIR");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -130,11 +130,11 @@ public class CadBairros extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void btnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIncluirActionPerformed
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         // INCLUI UM VISITANTE NA BASE DE DADOS
-        if(validarDados()){
+        if(validarDados()== true){
             
-            //guardar as informacoes no objeto = objBairro
+            
             
             objBairroControle = new BairroControle(objBairro, null);
             if(objBairroControle.incluir() == true){
@@ -144,7 +144,7 @@ public class CadBairros extends javax.swing.JFrame {
             }
             
         }
-    }//GEN-LAST:event_btnIncluirActionPerformed
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void jtbBairrosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbBairrosMousePressed
         // TODO add your handling code here:
@@ -215,8 +215,8 @@ public class CadBairros extends javax.swing.JFrame {
             lblId.setText("ID");
             txtNome.setText("");
            
-            btnIncluir.setEnabled(true);
-            btnAlterar.setEnabled(false);
+            btnSalvar.setEnabled(true);
+            
             btnExcluir.setEnabled(false);
             
             atualizarTabela();
@@ -306,8 +306,8 @@ public class CadBairros extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton btnIncluir;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
